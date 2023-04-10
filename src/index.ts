@@ -57,7 +57,7 @@ export type $HistoryService = {
   readonly addListener: (listener: $Listener) => number;
   readonly getCurrentPathname: () => string | null;
   readonly redirect: (arg0: $RedirectParams) => $RedirectResponse;
-  readonly render: $Component<unknown>;
+  readonly render: unknown;
 };
 
 const HistoryService: $HistoryService = {
@@ -76,7 +76,7 @@ const HistoryService: $HistoryService = {
 
     return params;
   },
-  render: withRouter(Spy),
+  render: withRouter(Spy) as unknown,
 };
 
 export default HistoryService;
