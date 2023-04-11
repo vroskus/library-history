@@ -1,7 +1,6 @@
 /* eslint-disable class-methods-use-this */
 // Global Types
 import type {
-  $Component,
   $Location,
   $WebRouter,
 } from '@vroskus/library-types';
