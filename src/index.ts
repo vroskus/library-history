@@ -10,11 +10,6 @@ import {
   withRouter,
 } from 'react-router-dom';
 
-// Types
-import type {
-  ReactNode,
-} from 'react';
-
 type $Listener = (location: $Location) => unknown;
 
 type $Props = $WebRouter;
@@ -60,7 +55,7 @@ export type $HistoryService = {
   readonly addListener: (listener: $Listener) => number;
   readonly getCurrentPathname: () => string | null;
   readonly redirect: (arg0: $RedirectParams) => $RedirectResponse;
-  readonly render: ReactNode;
+  readonly render: typeof React.Component;
 };
 
 const HistoryService: $HistoryService = {
@@ -79,7 +74,7 @@ const HistoryService: $HistoryService = {
 
     return params;
   },
-  render: withRouter(Spy) as unknown as ReactNode,
+  render: withRouter(Spy) as typeof React.Component,
 };
 
 export default HistoryService;
