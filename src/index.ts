@@ -1,14 +1,15 @@
 /* eslint-disable class-methods-use-this */
-// Global Types
-import type {
-  $Location,
-  $WebRouter,
-} from '@vroskus/library-types';
-
+// Global Components
 import * as React from 'react';
 import {
   withRouter,
 } from 'react-router-dom';
+
+// Types
+import type {
+  $Location,
+  $WebRouter,
+} from './types';
 
 type $Listener = (location: $Location) => unknown;
 
