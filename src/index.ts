@@ -11,6 +11,8 @@ import type {
   $WebRouter,
 } from './types';
 
+export * from './types';
+
 type $Listener = (location: $Location) => unknown;
 
 type $Props = $WebRouter;
