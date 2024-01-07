@@ -2,8 +2,8 @@ import type {
   Location,
 } from 'history';
 import type {
-  match,
   RouteComponentProps,
+  match,
 } from 'react-router';
 
 export type $Location = Location;

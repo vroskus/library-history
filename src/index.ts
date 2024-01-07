@@ -56,7 +56,7 @@ export type $RedirectResponse = $RedirectParams;
 
 export type $HistoryService = {
   readonly addListener: (listener: $Listener) => number;
-  readonly getCurrentPathname: () => string | null;
+  readonly getCurrentPathname: () => null | string;
   readonly redirect: (arg0: $RedirectParams) => $RedirectResponse;
   readonly render: typeof React.Component;
 };
