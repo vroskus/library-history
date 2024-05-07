@@ -1,4 +1,10 @@
 /* eslint-disable class-methods-use-this */
+
+// Global Types
+import type {
+  History,
+} from 'history';
+
 // Global Components
 import * as React from 'react';
 import {
@@ -17,7 +23,7 @@ type $Listener = (location: $Location) => unknown;
 
 type $Props = $WebRouter;
 
-let globalHistory = null;
+let globalHistory: History<unknown> | null = null;
 const listeners: Array<$Listener> = [];
 
 class Spy extends React.Component<$Props> {
