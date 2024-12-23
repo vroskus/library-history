@@ -1,4 +1,4 @@
-/* eslint-disable class-methods-use-this */
+/* eslint-disable class-methods-use-this,perfectionist/sort-modules */
 
 // Global Types
 import type {
@@ -26,6 +26,20 @@ type $Props = $WebRouter;
 let globalHistory: History<unknown> | null = null;
 const listeners: Array<$Listener> = [];
 
+export type $RedirectParams = {
+  hash?: string;
+  pathname?: string;
+  search?: string;
+  state?: object;
+};
+
+export type $HistoryService = {
+  readonly addListener: (listener: $Listener) => number;
+  readonly getCurrentPathname: () => null | string;
+  readonly redirect: (arg0: $RedirectParams) => $RedirectParams;
+  readonly render: typeof React.Component;
+};
+
 class Spy extends React.Component<$Props> {
   componentDidMount(): void {
     this.trackHistoryChange();
@@ -52,23 +66,10 @@ class Spy extends React.Component<$Props> {
   }
 }
 
-export type $RedirectParams = {
-  hash?: string;
-  pathname?: string;
-  search?: string;
-  state?: object;
-};
-export type $RedirectResponse = $RedirectParams;
-
-export type $HistoryService = {
-  readonly addListener: (listener: $Listener) => number;
-  readonly getCurrentPathname: () => null | string;
-  readonly redirect: (arg0: $RedirectParams) => $RedirectResponse;
-  readonly render: typeof React.Component;
-};
-
 const HistoryService: $HistoryService = {
-  addListener: (listener: $Listener) => listeners.push(listener),
+  addListener: (
+    listener: $Listener,
+  ) => listeners.push(listener),
   getCurrentPathname: () => {
     if (window && window.location) {
       return window.location.pathname || null;
@@ -76,7 +77,9 @@ const HistoryService: $HistoryService = {
 
     return null;
   },
-  redirect: (params: $RedirectParams): $RedirectResponse => {
+  redirect: (
+    params: $RedirectParams,
+  ): $RedirectParams => {
     if (globalHistory) {
       globalHistory.push(params);
     }

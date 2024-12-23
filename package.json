@@ -26,10 +26,10 @@
     "react-router-dom": "^5.3.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "@types/node": "^22.4.1",
-    "@types/react": "^18.3.3",
-    "@vroskus/eslint-config": "^1.0.11",
-    "typescript": "^5.4.5"
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@vroskus/eslint-config": "^1.0.19",
+    "typescript": "^5.7.2"
   }
 }
