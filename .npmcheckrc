@@ -1,0 +1,2 @@
+depcheck:
+  ignoreMatches: ["react-router-dom"]
