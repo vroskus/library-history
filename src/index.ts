@@ -1,4 +1,4 @@
-/* eslint-disable class-methods-use-this,perfectionist/sort-modules */
+/* eslint-disable class-methods-use-this */
 
 // Global Types
 import type {
