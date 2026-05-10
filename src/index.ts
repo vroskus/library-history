@@ -24,7 +24,8 @@ type $Listener = (location: $Location) => unknown;
 type $Props = $WebRouter;
 
 let globalHistory: History<unknown> | null = null;
-const listeners: Array<$Listener> = [];
+const listeners: Array<$Listener> = [
+];
 
 export type $RedirectParams = {
   hash?: string;
